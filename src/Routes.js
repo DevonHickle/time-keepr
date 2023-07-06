@@ -1,3 +1,5 @@
+import Login from "./containers/login"
+
 <Route exact path="/login">
-    <login />
+    <Login />
 </Route>
