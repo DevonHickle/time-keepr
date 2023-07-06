@@ -28,25 +28,21 @@ export default function Login({ setToken }) {
         <div className='Auth-form-container'>
             <form className="Auth-form" onSubmit={handleSubmit}>
                 <div className='Auth-form-content'>
-                    <h3 classname="Auth-form-title">
-                    Please Login
-                    </h3>
-                        <label>
-                        <p>Username</p>
+                    <h3 classname="Auth-form-title">Please Login</h3>
+                        <label>Email Address</label>
                         <input 
                         type='text' 
+                        placeholder='Enter email'
                         className="form-control mt-1"
                         onChange={e => setUserName(e.target.value)} 
                         />
-                        </label>
-                        <label>
-                            <p>Password</p>
+                        <label>Password</label>
                             <input 
                                 type='text' 
+                                placeholder='Enter password'
                                 className="form-control mt-1"
                                 onChange={e => setPassword(e.target.value)} 
                             />
-                        </label>
                         <div className='d-grid gap-2 mt-3'>
                             <button type='submit' className='btn btn-primary'>Submit</button>
                         </div>
