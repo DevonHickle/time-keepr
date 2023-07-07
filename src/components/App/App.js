@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Login from '../Login/Login'
 import Dashboard from '../Dashboard/Dashboard'
 import Preferences from '../Preferences/Preferences'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import useToken from './useToken'
 
 function App(){
-    const [token, setToken] = useState()
+    const {token, setToken} = useToken()
 
     if(!token) {
         return <Login setToken={setToken} />
@@ -15,10 +16,14 @@ function App(){
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/dashboard">
+                <Dashboard />
+                </Route>
             </Routes>
             <Routes>
-                <Route path="/preferences" element={<Preferences />} />
+                <Route path="/preferences">
+                <Preferences />
+                </Route>
             </Routes>
         </BrowserRouter>
     )

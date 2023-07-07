@@ -1,4 +1,4 @@
-import {useState} from 'reach'
+import {useState} from 'react'
 
 export default function useToken() {
     const getToken = () => {
@@ -9,7 +9,7 @@ export default function useToken() {
 
     const [token, setToken] = useState(getToken())
     const saveToken = userToken => {
-        localStorage.setItem('token', JSON.stringify(useToken))
+        localStorage.setItem('token', JSON.stringify(userToken))
         setToken(userToken.token)
     }
     return {

@@ -40,7 +40,7 @@ export default function Login({ setToken }) {
                             />
                             <label>Password</label>
                                 <input 
-                                    type='text' 
+                                    type='password' 
                                     placeholder='Enter password'
                                     className="form-control mt-1"
                                     onChange={e => setPassword(e.target.value)} 
