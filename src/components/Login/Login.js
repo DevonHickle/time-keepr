@@ -25,32 +25,35 @@ export default function Login({ setToken }) {
     }
 
     return (
-        <div className='Auth-form-container'>
-            <form className="Auth-form" onSubmit={handleSubmit}>
-                <div className='Auth-form-content'>
-                    <h3 classname="Auth-form-title">Please Login</h3>
-                        <label>Email Address</label>
-                        <input 
-                        type='text' 
-                        placeholder='Enter email'
-                        className="form-control mt-1"
-                        onChange={e => setUserName(e.target.value)} 
-                        />
-                        <label>Password</label>
+        <div className='Auth-form-body'>
+            <div className='Auth-form-container'>
+                <form className="Auth-form" onSubmit={handleSubmit}>
+                    <div className='Auth-form-content'>
+                        <h3 classname="Auth-form-title">Welcome to Time Keepr</h3>
+                        <h4 classname="Auth-form-subtitle">Please login to continue</h4>
+                            <label>Email Address</label>
                             <input 
-                                type='text' 
-                                placeholder='Enter password'
-                                className="form-control mt-1"
-                                onChange={e => setPassword(e.target.value)} 
+                            type='text' 
+                            placeholder='Enter email'
+                            className="form-control mt-1"
+                            onChange={e => setUserName(e.target.value)} 
                             />
-                        <div className='d-grid gap-2 mt-3'>
-                            <button type='submit' className='btn btn-primary'>Submit</button>
-                        </div>
-                        <p className="forgot-password text-right">
-                        Forgot <a href="#">password?</a>
-                    </p>
-                </div>
-            </form>
+                            <label>Password</label>
+                                <input 
+                                    type='text' 
+                                    placeholder='Enter password'
+                                    className="form-control mt-1"
+                                    onChange={e => setPassword(e.target.value)} 
+                                />
+                            <div className='d-grid gap-2 mt-3'>
+                                <button type='submit' className='btn btn-primary'>Submit</button>
+                            </div>
+                            <p className="forgot-password text-right">
+                            Forgot <a href="#">password?</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
