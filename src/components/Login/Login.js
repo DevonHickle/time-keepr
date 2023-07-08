@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import PasswordCheckList from 'react-password-checklist'
+import PasswordChecklist from 'react-password-checklist'
 import PropTypes from 'prop-types'
 import './Login.css'
 
@@ -95,12 +95,6 @@ export default function Login({ setToken }) {
                                         placeholder='Enter password'
                                         className="form-control mt-1"
                                         onChange={e => setPassword(e.target.value)} 
-                                    />
-                                    <PasswordCheckList
-                                        rules={["minLength", "specialChar", "number", "capital"]}
-                                        minLength = {6}
-                                        value={password}
-                                        onChange={(isValid) => {}}
                                     />
                                 <div className='d-grid gap-2 mt-3'>
                                     <button type='submit' className='btn btn-primary'>Submit</button>
