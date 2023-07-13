@@ -1,3 +1,15 @@
 body {
     background-color: #121212;
 }
+
+.App-logo {
+    display: block;
+    margin: auto; 
+    width: 50%;
+}
+
+.App-logo-text {
+    display: block;
+    margin: auto;
+    width: 50%;
+}

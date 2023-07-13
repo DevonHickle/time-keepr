@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import PasswordChecklist from 'react-password-checklist'
 import PropTypes from 'prop-types'
 import './Login.css'
+import LogoImg from '../../images/svg/LogoImg'
 
 async function loginUser(creds) {
     return fetch('http://localhost:8080/login', {
@@ -37,8 +37,8 @@ export default function Login({ setToken }) {
                 <div className='Auth-form-container'>
                     <form className="Auth-form" onSubmit={handleSubmit}>
                         <div className='Auth-form-content'>
-                            <h3 classname="Auth-form-title">Welcome to Time Keepr</h3>
-                            <h4 classname="Auth-form-subtitle">Please login to continue</h4>
+                            <LogoImg className='App-logo' />
+                            <h3 className='text-center'>Time Keepr</h3>
                             <div className='text-center'>Not registered?{" "}
                                 <span className='link-primary' onClick={changeAuthMode}>
                                     Sign Up
@@ -75,9 +75,10 @@ export default function Login({ setToken }) {
                 <div className='Auth-form-container'>
                     <form className="Auth-form" onSubmit={handleSubmit}>
                         <div className='Auth-form-content'>
-                            <h3 classname="Auth-form-title">Time Keepr</h3>
-                            <h4 classname="Auth-form-subtitle">Create an account</h4>
-                            <div className='text-center'>Already Registered?{" "}
+                        <LogoImg className='App-logo' />
+                        <h3 className='text-center'>Time Keepr</h3>
+                        <h5 className='text-center'>Create account</h5>
+                        <div className='text-center'>Already Registered?{" "}
                                 <span className='link-primary' onClick={changeAuthMode}>
                                     Sign In
                                 </span>
@@ -96,12 +97,9 @@ export default function Login({ setToken }) {
                                         className="form-control mt-1"
                                         onChange={e => setPassword(e.target.value)} 
                                     />
-                                <div className='d-grid gap-2 mt-3'>
-                                    <button type='submit' className='btn btn-primary'>Submit</button>
-                                </div>
-                                <p className="forgot-password text-right">
-                                Forgot <a href="#">password?</a>
-                            </p>
+                            <div className='d-grid gap-2 mt-3'>
+                                <button type='submit' className='btn btn-primary'>Submit</button>
+                            </div>
                         </div>
                     </form>
                 </div>
