@@ -47,14 +47,14 @@ export default function Login({ setToken }) {
                                 <label>Email Address</label>
                                 <input 
                                 type='text' 
-                                placeholder='Enter email'
+                                placeholder='Enter Email'
                                 className="form-control mt-1"
                                 onChange={e => setUserName(e.target.value)} 
                                 />
                                 <label>Password</label>
                                     <input 
                                         type='password' 
-                                        placeholder='Enter password'
+                                        placeholder='Enter Password'
                                         className="form-control mt-1"
                                         onChange={e => setPassword(e.target.value)} 
                                     />
