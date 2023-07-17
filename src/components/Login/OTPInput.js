@@ -1,7 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import { RecoveryContext } from "../App";
-import axios from "axios";
-import "./global.component.css";
+import React, { useState, useContext, disable, timerCount, resendOTP } from "react";
+import { RecoveryContext } from "../App/App";
+import "../global.component.css"
 
 export default function OTPInput() {
   const { username, otp, setPage } = useContext(RecoveryContext);

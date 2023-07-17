@@ -1,14 +1,11 @@
 import React, { createContext } from 'react'
 import './App.css'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Login from '../Login/Login'
-import Dashboard from '../Dashboard/Dashboard'
-import Preferences from '../Preferences/Preferences'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import useToken from './useToken'
-import Datepicker from '../Datepicker/Datepicker'
 import OTPInput from '../Login/OTPInput'
 import ForgotPassword from '../Login/ForgotPassword'
+import SelectDate from '../Calendar/Calendar'
 export const RecoveryContext = createContext();
 
 export default function App(){
@@ -21,6 +18,7 @@ export default function App(){
         if (page === 'login') return <Login />;
         if (page === 'otp') return <OTPInput />;
         if (page === 'forgotpassword') return <ForgotPassword />;
+        if (page === 'calendar') return <SelectDate />
     }
 
     if(!token) {

@@ -1,7 +1,6 @@
 import React, {useState, useContext} from "react";
-import { RecoveryContext } from "../App";
+import {RecoveryContext} from "../App/App"
 import axios from "axios";
-import "./global.component.css";
 
 export default function ForgotPassword() {
   const [password, setPassword] = useState("");
