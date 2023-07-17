@@ -14,6 +14,27 @@ async function loginUser(creds) {
 }
 
 export default function Login({ setToken }) {
+    
+function sendOtp() {
+    if(username) {
+        axios.get(`http://localhost:3000/checkUser?username=${username}`).then((response) => {
+            if(response.status === 200) {
+                const OTP = Math.floor(Math.random() * 9000 + 1000)
+                console.log(OTP)
+                setOTP(OTP)
+                setUsername(username)
+
+                axios.post('http://localhost:3000/send_email', {
+                    OTP,
+                    recipient_username: username,
+            }).then(() => setPage('otp')).catch(console.log)
+        } else {
+            alert('User does not exit with this username')
+            console.log(response.data.message)
+        }}).catch(console.log)
+    } else {
+        alert('Please enter username')
+    }}
 
     let [authMode, setAuthMode] = useState('signin')
 
@@ -21,6 +42,7 @@ export default function Login({ setToken }) {
         setAuthMode(authMode === 'signin' ? 'signup' : 'signin')
     }
 
+    const { setPage, setOTP, setUsername } = useContext(RecoveryContext)
     const [username, setUserName] = useState()
     const [password, setPassword] = useState()
     const handleSubmit = async e=> {
@@ -62,7 +84,7 @@ export default function Login({ setToken }) {
                                     <button type='submit' className='btn btn-primary'>Submit</button>
                                 </div>
                                 <p className="forgot-password text-right">
-                                Forgot <a href="#">password?</a>
+                                Forgot <a href="#" onClick={() => sendOtp()}>password?</a>
                             </p>
                         </div>
                     </form>

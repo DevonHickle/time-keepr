@@ -8,8 +8,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import useToken from './useToken'
 import Datepicker from '../Datepicker/Datepicker'
 
-function App(){
+export default function App(){
     const {token, setToken} = useToken()
+    const [page, setPage] = React.useState('login')
+    const [username, setUsername] = React.useState('')
+    const [otp, setOTP] = React.useState('')
+
+    function NavigateComponents() {
+        if (page === 'login') return <Login />;
+        if (page === 'otp') return <OTPInput />;
+        if (page === 'forgotpassword') return <ForgotPassword />;
 
     if(!token) {
         return <Login setToken={setToken} />
@@ -21,9 +29,9 @@ function App(){
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/preferences" element={<Preferences />} />
                 <Route path="/datepicker" element={<Datepicker />} />
+                <Route path="/forgotpassword" element={<ForgotPassword />} />
             </Routes>
         </BrowserRouter>
-    )
+        )
+    }
 }
-
-export default App
