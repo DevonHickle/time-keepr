@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import './Login.css'
 import LogoImg from '../../images/svg/LogoImg'
 import axios from 'axios'
-import { RecoveryContext } from '../App/App'
-import "../global.component.css"
+import { RecoveryContext } from '../../components/App/App'
 
 async function loginUser(creds) {
     return fetch('http://localhost:8080/login', {

@@ -1,11 +1,11 @@
 import React, { createContext } from 'react'
 import './App.css'
-import Login from '../Login/Login'
+import Login from '../../pages/Login/Login'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import useToken from './useToken'
-import OTPInput from '../Login/OTPInput'
-import ForgotPassword from '../Login/ForgotPassword'
-import SelectDate from '../Calendar/Calendar'
+import OTPInput from '../../pages/Login/OTPInput'
+import ForgotPassword from '../../pages/Login/ForgotPassword'
+import SelectDate from '../../pages/Calendar/Calendar'
 export const RecoveryContext = createContext();
 
 export default function App(){

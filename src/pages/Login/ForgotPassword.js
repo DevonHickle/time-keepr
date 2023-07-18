@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react";
-import {RecoveryContext} from "../App/App"
+import {RecoveryContext} from "../../components/App/App"
 import axios from "axios";
 
 export default function ForgotPassword() {
