@@ -1,4 +1,5 @@
 import React, { createContext } from 'react'
+import { Switch, Redirect, Route, PrivateRoute } from 'react-router-dom'
 import './App.css'
 import Login from '../../pages/Login/Login'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -25,13 +26,11 @@ export default function App(){
         return <Login setToken={setToken} />
     }
     return (
-        <div className="App-header"> 
-          <RecoveryContext.Provider
-            value={{ page, setPage, otp, setOTP, username, setUsername }}>
-            <div>
-              <NavigateComponents />
-            </div>
-          </RecoveryContext.Provider>
-        </div>
+      <Switch>
+        <Redirect from="/" to="/login" />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute path="/calendar" component={SelectDate} />
+        <PrivateRoute path="/forgotpassword" component={ForgotPassword} />
+    </Switch>
       );
 }

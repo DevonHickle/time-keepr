@@ -5,7 +5,6 @@ import 'react-calendar/dist/Calendar.css'
 
 function SelectDate () {
     const [date, setDate] = useState(new Date())
-    const [startDate, setStartDate] = useState(new Date());
     const [authenticated, setAuthenticated] = useState(null)
     useEffect(() => {
         const loggedInUser = localStorage.getItem('authenticated')
@@ -14,7 +13,7 @@ function SelectDate () {
     }
   }, [])
   if(!authenticated) {
-    return <Navigate replace to='/login' />
+    return <Navigate replace to='/calendar' />
   } else {
     return (
         <div className='app-container'>
